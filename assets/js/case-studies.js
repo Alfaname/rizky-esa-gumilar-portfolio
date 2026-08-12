@@ -138,8 +138,7 @@
     {
       k: '01',
       title: { id: 'Profitabilitas', en: 'Profitability' },
-      short: { id: 'Di mana margin dibuat atau bocor?', en: 'Where is margin made or lost?' },
-      q: { id: 'Di mana margin sebenarnya dibuat — dan di mana ia bocor?', en: 'Where is margin actually created — and where does it leak?' },
+      q: { id: 'Di mana margin terbentuk — dan di mana ia hilang?', en: 'Where is margin being created or lost?' },
       measures: [
         { id: 'Margin kotor dan margin bersih', en: 'Gross margin and net margin' },
         { id: 'Margin per kanal, produk, dan proyek', en: 'Margin by channel, product and project' },
@@ -156,8 +155,7 @@
     {
       k: '02',
       title: { id: 'Kas', en: 'Cash' },
-      short: { id: 'Berapa kas tersedia dan apa yang akan berubah?', en: 'What cash is available and what is about to change?' },
-      q: { id: 'Berapa kas yang benar-benar tersedia, dan apa yang akan mengubahnya?', en: 'What cash is genuinely available, and what is about to change it?' },
+      q: { id: 'Berapa kas yang tersedia, dan apa yang akan mengubahnya?', en: 'What cash is available, and what is about to change?' },
       measures: [
         { id: 'Posisi kas dan pergerakan harian', en: 'Cash position and daily movement' },
         { id: 'Arus masuk dan arus keluar per klasifikasi', en: 'Inflow and outflow by classification' },
@@ -174,8 +172,7 @@
     {
       k: '03',
       title: { id: 'Piutang', en: 'Receivables' },
-      short: { id: 'Apa yang belum menjadi kas?', en: 'What has not become cash yet?' },
-      q: { id: 'Apa yang sudah menjadi penjualan tetapi belum menjadi kas — dan mana yang perlu didahulukan?', en: 'What has already become revenue but not yet cash — and which part needs attention first?' },
+      q: { id: 'Apa yang belum menjadi kas, dan mana yang perlu didahulukan?', en: 'What has not become cash yet, and what needs attention first?' },
       measures: [
         { id: 'Total piutang dan umur piutang', en: 'Total receivables and ageing' },
         { id: 'Jatuh tempo dan yang sudah lewat', en: 'Due and overdue' },
@@ -191,8 +188,7 @@
     {
       k: '04',
       title: { id: 'Kinerja Proyek', en: 'Project Performance' },
-      short: { id: 'Apakah proyek masih sehat secara keuangan?', en: 'Is the project financially on track?' },
-      q: { id: 'Apakah proyek ini masih sehat secara keuangan — dan bagian mana yang mulai bergeser?', en: 'Is this project still financially healthy — and which part has started to move?' },
+      q: { id: 'Apakah proyek ini masih sehat secara keuangan?', en: 'Is the project financially on track?' },
       measures: [
         { id: 'Nilai kontrak terhadap biaya yang sudah terjadi', en: 'Contract value against cost incurred' },
         { id: 'Margin dan variance terhadap rencana', en: 'Margin and variance against plan' },
@@ -208,9 +204,8 @@
     },
     {
       k: '05',
-      title: { id: 'Eksepsi & Risiko', en: 'Exception & Risk' },
-      short: { id: 'Apa yang berubah dan perlu perhatian sekarang?', en: 'What changed and needs attention now?' },
-      q: { id: 'Apa yang berubah dari kebiasaan — dan perlu perhatian manajemen sekarang?', en: 'What has moved away from the pattern — and needs management attention now?' },
+      title: { id: 'Eksepsi', en: 'Exceptions' },
+      q: { id: 'Apa yang berubah dan perlu perhatian sekarang?', en: 'What changed and requires attention now?' },
       measures: [
         { id: 'Variance dan deviasi terhadap anggaran', en: 'Variance and deviation against budget' },
         { id: 'Transaksi yang belum cocok atau belum terpetakan', en: 'Unmatched or unmapped transactions' },
@@ -240,8 +235,9 @@
       b.id = 'dim-' + d.k;
       b.appendChild(el('span', 'matrix__btn-k', d.k));
       var mid = el('span');
-      mid.appendChild(el('span', 'matrix__btn-t', L(d.title)));
-      mid.appendChild(el('span', 'matrix__btn-q', L(d.short)));
+      // The question leads; the finance dimension is only the label on it.
+      mid.appendChild(el('span', 'matrix__btn-t', L(d.q)));
+      mid.appendChild(el('span', 'matrix__btn-q', L(d.title)));
       b.appendChild(mid);
       b.appendChild(el('span', 'matrix__arrow', '→'));
       b.addEventListener('click', function () {
@@ -261,7 +257,8 @@
     var d = DIMENSIONS[matrixIndex];
     panel.innerHTML = '';
     panel.setAttribute('aria-labelledby', 'dim-' + d.k);
-    panel.appendChild(el('h3', 'matrix__q', L(d.q)));
+    panel.appendChild(el('span', 'matrix__panel-k', d.k + ' · ' + L(d.title)));
+    panel.appendChild(el('h3', 'matrix__q display', L(d.q)));
     var cols = el('div', 'matrix__cols');
     var c1 = el('div');
     c1.appendChild(el('p', 'matrix__sub', T.t('matrix.measures')));
@@ -298,6 +295,12 @@
     head.appendChild(right);
     host.appendChild(head);
 
+    // Key signal — the management implication, read before any chart.
+    var sig = el('div', 'case__signal');
+    sig.appendChild(el('span', 'case__signal-k', T.t('ui.keySignal')));
+    sig.appendChild(el('p', 'display case__signal-t', L(spec.keySignal)));
+    host.appendChild(sig);
+
     var report = el('div', 'report');
     var bar = el('div', 'report__bar');
     bar.appendChild(el('span', 'report__title', L(spec.panel)));
@@ -322,8 +325,8 @@
     host.appendChild(report);
 
     var outcome = el('div', 'case__outcome');
-    var sig = el('div');
-    sig.appendChild(el('p', 'outcome__head', T.t('ui.signal')));
+    var reading = el('div');
+    reading.appendChild(el('p', 'outcome__head', T.t('ui.signal')));
     var sl = el('ul', 'signal-list');
     spec.signals.forEach(function (s, i) {
       var li = el('li');
@@ -335,8 +338,8 @@
       li.appendChild(body2);
       sl.appendChild(li);
     });
-    sig.appendChild(sl);
-    outcome.appendChild(sig);
+    reading.appendChild(sl);
+    outcome.appendChild(reading);
 
     var dec = el('div');
     dec.appendChild(el('p', 'outcome__head', T.t('ui.decision')));
@@ -397,6 +400,10 @@
       en: 'Sales from four marketplace channels brought together down to margin level: gross sales, seller discounts, channel costs, COGS, then settlement and receivables. The question is not how much sold, but how much actually remained.',
     },
     panel: { id: 'Laporan Profitabilitas Marketplace', en: 'Marketplace Profitability Report' },
+    keySignal: {
+      id: 'Penjualan tinggi tidak selalu berarti margin terbaik. Biaya kanal menentukan di mana profit benar-benar terbentuk.',
+      en: 'Higher sales do not always mean better margins. Channel costs determine where profit is actually created.',
+    },
     signals: [
       {
         t: { id: 'Kanal terbesar bukan kanal paling efisien.', en: 'The largest channel is not the most efficient one.' },
@@ -423,8 +430,7 @@
     decisions: [
       { id: 'Lindungi margin', en: 'Protect margin' },
       { id: 'Selidiki kebocoran', en: 'Investigate leakage' },
-      { id: 'Prioritaskan kanal & produk', en: 'Prioritise channel & product' },
-      { id: 'Tinjau settlement', en: 'Review settlement' },
+      { id: 'Prioritaskan kanal / produk', en: 'Prioritise channel / product' },
     ],
     enabler: {
       id: 'Ekspor penjualan dan pencairan tiap kanal dinormalisasi ke satu struktur akun, dijurnal, lalu diringkas menjadi laba rugi, posisi piutang, dan margin per produk — sehingga angka yang sama bisa dibaca dari sisi manajemen maupun sisi akuntansi.',
@@ -861,6 +867,10 @@
       en: 'One project read along two deliberately separated paths: the profit path (project value → cost → margin) and the cash path (terms → cash received → outstanding collection). A project can be profitable on paper and still be short of cash.',
     },
     panel: { id: 'Laporan Kinerja Proyek — Proyek A', en: 'Project Performance Report — Project A' },
+    keySignal: {
+      id: 'Margin dapat terlihat sehat sementara cash-in tertinggal dan biaya terkonsentrasi pada beberapa komponen utama.',
+      en: 'Margins can remain healthy while cash collection lags and costs concentrate in a few key areas.',
+    },
     signals: [
       {
         t: { id: 'Margin sehat, tetapi penagihan tertinggal.', en: 'Margin is healthy, collection is behind.' },
@@ -885,7 +895,6 @@
       },
     ],
     decisions: [
-      { id: 'Lanjutkan', en: 'Continue' },
       { id: 'Kendalikan biaya', en: 'Control cost' },
       { id: 'Percepat penagihan', en: 'Accelerate collection' },
       { id: 'Tinjau margin', en: 'Review margin' },
@@ -1186,6 +1195,10 @@
       en: 'Account movement is classified into accounting context, reconciled, then presented as a cash position together with its exception list. The value is not in uploading statements — it is in making cash information fit to decide on.',
     },
     panel: { id: 'Laporan Visibilitas Kas — Rekening Operasional A', en: 'Cash Visibility Report — Operating Account A' },
+    keySignal: {
+      id: 'Saldo hanya menunjukkan posisi. Transaksi yang belum terklasifikasi dan eksepsi menunjukkan apa yang membutuhkan perhatian.',
+      en: 'The balance shows the position. Unclassified transactions and exceptions show what needs attention.',
+    },
     signals: [
       {
         t: { id: '95% nilai sudah cocok — sisanya yang menentukan.', en: '95% of value is matched — the rest is what decides.' },
@@ -1210,11 +1223,9 @@
       },
     ],
     decisions: [
-      { id: 'Tagih', en: 'Collect' },
-      { id: 'Tahan', en: 'Hold' },
-      { id: 'Cairkan', en: 'Release' },
-      { id: 'Selidiki', en: 'Investigate' },
       { id: 'Rekonsiliasi', en: 'Reconcile' },
+      { id: 'Selidiki', en: 'Investigate' },
+      { id: 'Prioritaskan', en: 'Prioritise' },
     ],
     enabler: {
       id: 'Mutasi rekening dibaca menjadi baris transaksi, dipetakan ke akun sesuai polanya, lalu diberi status rekonsiliasi. Yang tidak dikenali tidak dipaksa masuk — justru diangkat sebagai antrean eksepsi yang harus diputuskan manusia.',
@@ -1548,6 +1559,26 @@
       host.appendChild(cell);
     });
   }
+  /* Scope of work — domains, not a tool list. */
+  var THEMES = [
+    { id: 'Keuangan multi-entitas', en: 'Multi-entity finance' },
+    { id: 'Keuangan marketplace', en: 'Marketplace finance' },
+    { id: 'Keuangan proyek', en: 'Project finance' },
+    { id: 'Pelaporan manajemen', en: 'Management reporting' },
+    { id: 'Pengendalian keuangan', en: 'Financial control' },
+  ];
+
+  function renderThemes() {
+    var host = document.getElementById('aboutThemes');
+    if (!host) return;
+    host.innerHTML = '';
+    var head = el('li', 'about__themes-k', T.t('about.themes'));
+    host.appendChild(head);
+    THEMES.forEach(function (t) {
+      host.appendChild(el('li', 'about__theme', L(t)));
+    });
+  }
+
   function renderPrinciples() {
     var host = document.getElementById('principles');
     if (!host) return;
@@ -1567,6 +1598,7 @@
     buildCase2(document.getElementById('case-2'));
     buildCase3(document.getElementById('case-3'));
     renderSupport();
+    renderThemes();
     renderPrinciples();
   }
 

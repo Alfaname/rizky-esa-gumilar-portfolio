@@ -89,6 +89,7 @@
       body.appendChild(el('span', 'method__beat-t', L(b.t)));
       body.appendChild(el('p', 'method__beat-d', L(b.d)));
       li.appendChild(body);
+      li.appendChild(el('span', 'method__beat-bar'));
       beats.appendChild(li);
     });
 
@@ -129,39 +130,79 @@
     if (stamp) stamp.textContent = T.lang === 'en' ? 'Week 32' : 'Minggu 32';
   }
 
+  /* ---- pacing ----------------------------------------------------------
+     The sequence is scrubbed by scroll but played back through an eased
+     follower, so a fast flick still animates through every beat instead of
+     jumping to the end. Each beat also carries its own progress line, so no
+     part of the scroll distance feels inert. */
+  var mTarget = 0;
+  var mNow = 0;
+  var mRaf = null;
+
+  function methodTick() {
+    var diff = mTarget - mNow;
+    if (Math.abs(diff) < 0.0006) {
+      mNow = mTarget;
+      paintMethod();
+      mRaf = null;
+      return;
+    }
+    mNow += diff * 0.085;
+    paintMethod();
+    mRaf = requestAnimationFrame(methodTick);
+  }
+
   function methodScroll() {
     var stage = document.getElementById('methodStage');
     if (!stage) return;
     var rect = stage.getBoundingClientRect();
     var total = rect.height - global.innerHeight;
-    var p = total > 0 ? Math.max(0, Math.min(1, -rect.top / total)) : 0;
-    var beat = Math.max(0, Math.min(4, Math.floor(p * 5)));
+    mTarget = total > 0 ? Math.max(0, Math.min(1, -rect.top / total)) : 0;
+    if (reduced) {
+      mNow = mTarget;
+      paintMethod();
+      return;
+    }
+    if (!mRaf) mRaf = requestAnimationFrame(methodTick);
+  }
+
+  function paintMethod() {
+    // Land the last beat a little before the pin releases, so the finished
+    // state is held rather than still arriving.
+    var pos = Math.max(0, Math.min(1, mNow / 0.94)) * 5;
+    var beat = Math.max(0, Math.min(4, Math.floor(pos)));
+    var sub = Math.max(0, Math.min(1, pos - beat));
 
     var beats = document.getElementById('methodBeats');
     if (beats) {
       Array.prototype.forEach.call(beats.children, function (li, i) {
         li.classList.toggle('is-active', i === beat);
+        li.classList.toggle('is-done', i < beat);
+        li.style.setProperty('--sub', i < beat ? 1 : i === beat ? sub.toFixed(3) : 0);
       });
     }
     var portrait = document.getElementById('methodPortrait');
     var report = document.getElementById('methodReport');
     if (portrait) {
-      portrait.style.opacity = beat === 0 ? '1' : '0';
-      portrait.style.transform = beat === 0 ? 'scale(1)' : 'scale(1.04)';
+      // Beat one is not a still frame: the portrait pushes in slowly and
+      // dissolves into the report rather than cutting.
+      var out = beat === 0 ? Math.max(0, (sub - 0.5) / 0.5) : 1;
+      portrait.style.opacity = String(1 - out);
+      portrait.style.transform = 'scale(' + (1 + (beat === 0 ? sub * 0.035 : 0.045)).toFixed(3) + ')';
     }
-    if (report) report.classList.toggle('is-on', beat >= 1);
+    if (report) report.classList.toggle('is-on', beat >= 1 || sub > 0.62);
 
     var sources = document.getElementById('methodSources');
     if (sources) {
       Array.prototype.forEach.call(sources.children, function (s, i) {
-        s.classList.toggle('is-on', beat >= 1 && p * 5 - 1 > i * 0.12);
-        s.classList.toggle('is-checked', beat >= 2);
+        s.classList.toggle('is-on', beat > 1 || (beat === 1 && sub > i * 0.15));
+        s.classList.toggle('is-checked', beat > 2 || (beat === 2 && sub > 0.12 + i * 0.1));
       });
     }
     var chart = document.getElementById('methodChart');
     if (chart) {
       Array.prototype.forEach.call(chart.children, function (c, i) {
-        c.classList.toggle('is-on', beat >= 2 && p * 5 - 2 > i * 0.09);
+        c.classList.toggle('is-on', beat > 2 || (beat === 2 && sub > i * 0.1));
         c.classList.toggle('is-signal', beat >= 3 && i === 6);
         c.classList.toggle('is-quiet', beat >= 3 && i !== 6);
       });
@@ -169,11 +210,11 @@
     var side = document.getElementById('methodSide');
     if (side) {
       Array.prototype.forEach.call(side.children, function (s, i) {
-        s.classList.toggle('is-on', beat >= 3 && p * 5 - 3 > i * 0.14);
+        s.classList.toggle('is-on', beat > 3 || (beat === 3 && sub > 0.1 + i * 0.16));
       });
     }
     var dec = document.getElementById('methodDecide');
-    if (dec) dec.classList.toggle('is-on', beat >= 4);
+    if (dec) dec.classList.toggle('is-on', beat >= 4 && sub > 0.06);
   }
 
   /* ------------------------------ nav ------------------------------ */

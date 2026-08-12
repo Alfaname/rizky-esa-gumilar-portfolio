@@ -78,18 +78,25 @@
     'method.quote':
       '“Pertanyaannya jarang ‘berapa angkanya’. Pertanyaannya adalah apa yang harus dilakukan setelah melihat angkanya.”',
     'method.report': 'Tampilan Manajemen',
+    'method.openingK': '01 · Pertanyaan manajemen',
 
     'support.eyebrow': 'Pekerjaan Pendukung',
     'about.eyebrow': 'Tentang & Cara Berpikir',
-    'about.lede': 'Finance-minded. Strategy-driven. Technology-enabled.',
+    'about.lede1': 'Finance-minded.',
+    'about.lede2': 'Strategy-driven.',
+    'about.lede3': 'Technology-enabled.',
+    'about.factBase': 'Basis',
+    'about.factLang': 'Bahasa kerja',
+    'about.factFor': 'Untuk',
+    'about.factForV': 'Owner, BOD, CFO, dan pimpinan keuangan',
+    'about.themes': 'Ruang lingkup',
+    'about.linkedin': 'Riwayat karier lengkap tersedia di',
     'about.p1':
       'Latar belakang saya adalah keuangan dan akuntansi: menyusun laporan, menjaga kontrol, dan memastikan angka bisa dipertanggungjawabkan. Yang membuat saya bertahan di bidang ini bukan laporannya, tetapi momen ketika sebuah angka akhirnya mengubah cara manajemen mengambil langkah.',
     'about.p2':
       'Karena itu saya bekerja dari arah sebaliknya: mulai dari keputusan yang harus diambil, lalu menyusun informasi seperlunya untuk sampai ke sana. Otomasi, dashboard, dan integrasi data hanyalah cara mempersingkat jaraknya — bukan tujuannya.',
     'about.p4':
       'Satu hal yang tidak bisa ditawar: kerahasiaan. Semua contoh di situs ini sengaja disamarkan — logikanya nyata, angkanya tidak. Disiplin yang sama berlaku untuk data siapa pun yang saya pegang.',
-    'about.p3':
-      'Pengalaman saya mencakup keuangan multi-entitas, marketplace, proyek, pelaporan manajemen, dan pengendalian keuangan. Riwayat karier lengkap tersedia di LinkedIn.',
 
     'contact.eyebrow': 'Kontak',
     'contact.title': 'Mari perjelas langkah berikutnya.',
@@ -106,7 +113,8 @@
     'ui.showTable': 'Tampilkan tabel data',
     'ui.showChart': 'Tampilkan grafik',
     'ui.all': 'Semua kanal',
-    'ui.signal': 'Sinyal — yang berarti',
+    'ui.keySignal': 'Sinyal Utama',
+    'ui.signal': 'Yang terbaca dari laporan',
     'ui.decision': 'Keputusan yang didukung',
     'ui.enabler': 'Bagaimana ini dimungkinkan',
     'ui.disclosure':
@@ -188,18 +196,25 @@
     'method.quote':
       '“The question is rarely ‘what is the number’. The question is what to do once you have seen it.”',
     'method.report': 'Management View',
+    'method.openingK': '01 · The management question',
 
     'support.eyebrow': 'Supporting Work',
     'about.eyebrow': 'About & How I Think',
-    'about.lede': 'Finance-minded. Strategy-driven. Technology-enabled.',
+    'about.lede1': 'Finance-minded.',
+    'about.lede2': 'Strategy-driven.',
+    'about.lede3': 'Technology-enabled.',
+    'about.factBase': 'Based in',
+    'about.factLang': 'Working languages',
+    'about.factFor': 'Works with',
+    'about.factForV': 'Owners, boards, CFOs and finance leaders',
+    'about.themes': 'Scope',
+    'about.linkedin': 'The full career history lives on',
     'about.p1':
       'My background is finance and accounting: building the reports, holding the controls, making sure the numbers stand up. What kept me in this field was never the report itself — it was the moment a number finally changed how management moved.',
     'about.p2':
       'So I work backwards from that: start with the decision that has to be made, then assemble only the information needed to get there. Automation, dashboards and data integration are simply how the distance gets shorter — never the point.',
     'about.p4':
       'One thing is not negotiable: confidentiality. Every example on this site is deliberately anonymised — the logic is real, the numbers are not. The same discipline applies to anyone else’s data I handle.',
-    'about.p3':
-      'My experience spans multi-entity finance, marketplace finance, project finance, management reporting and financial control. The full career history lives on LinkedIn.',
 
     'contact.eyebrow': 'Contact',
     'contact.title': "Let's clarify the next move.",
@@ -215,7 +230,8 @@
     'ui.showTable': 'Show data table',
     'ui.showChart': 'Show chart',
     'ui.all': 'All channels',
-    'ui.signal': 'Signal — what it means',
+    'ui.keySignal': 'Key Signal',
+    'ui.signal': 'What the report shows',
     'ui.decision': 'Decisions it supports',
     'ui.enabler': 'How it was enabled',
     'ui.disclosure':
