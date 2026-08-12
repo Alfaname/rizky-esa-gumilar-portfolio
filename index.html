@@ -1,25 +1,493 @@
 <!doctype html>
 <html lang="id">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rizky Esa Gumilar — Finance Control & Automation</title>
-<style>
-:root{--bg:#f5f7f3;--paper:#fff;--ink:#112528;--muted:#64757a;--line:#dde5df;--deep:#102b2f;--green:#9fe2ba;--greenSoft:#e5f6eb;--max:1180px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}a{text-decoration:none;color:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}nav{position:sticky;top:0;z-index:20;background:rgba(245,247,243,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;font-weight:850}.brandmark{width:36px;height:36px;border-radius:11px;background:var(--deep);color:white;display:grid;place-items:center;font-size:11px}.navlinks{display:flex;gap:18px;font-size:13px;color:#586b70;font-weight:700}.cta{padding:10px 15px;border:1px solid var(--deep);border-radius:999px;font-size:12px;font-weight:800}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;min-height:calc(100vh - 70px);padding:64px 0}.eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:850;color:#5e7478}.hero h1{font-size:clamp(52px,7vw,92px);line-height:.93;letter-spacing:-.065em;margin:18px 0 24px}.hero h1 span{color:#6d8084;font-weight:700}.hero p{font-size:18px;color:#576a6f;max-width:680px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:27px}.btn{min-height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--deep);display:inline-flex;align-items:center;font-size:13px;font-weight:820}.btn.primary{background:var(--deep);color:white}.hero-panel{background:var(--deep);border-radius:34px;padding:28px;color:white;min-height:470px;box-shadow:0 30px 80px rgba(13,41,45,.17);position:relative;overflow:hidden}.hero-panel:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:38px 38px}.panelin{position:relative;z-index:1}.profile{margin-top:50px;background:white;color:var(--ink);border-radius:22px;padding:20px}.profile h3{margin:0;font-size:25px}.profile p{margin:6px 0 0;color:#74868a;font-size:12px}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:18px}.flow div{padding:13px 8px;border-radius:12px;background:rgba(255,255,255,.07);text-align:center;font-size:10px;color:#c9d7d9}.flow .active{background:var(--green);color:#17372c}.trust{border-block:1px solid var(--line);background:#edf1ed;padding:14px 0}.trustin{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5d7074;font-weight:820}section{padding:86px 0}.head{display:grid;grid-template-columns:.72fr 1.28fr;gap:40px;align-items:end;margin-bottom:34px}.head h2{font-size:clamp(38px,5vw,64px);line-height:.98;letter-spacing:-.055em;margin:8px 0 0}.head p{margin:0;color:var(--muted)}.projects{display:grid;gap:20px}.project{display:grid;grid-template-columns:.76fr 1.24fr;gap:22px;background:white;border:1px solid var(--line);border-radius:28px;padding:24px}.project h3{font-size:clamp(28px,3vw,40px);line-height:1.02;letter-spacing:-.045em;margin:38px 0 12px}.project p{color:#687a7e;font-size:13px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px}.tags span{padding:6px 8px;border-radius:999px;background:#eff3f0;font-size:9px;font-weight:780;color:#56696d}.visual{min-height:330px;border-radius:22px;background:linear-gradient(145deg,#0f2c30,#1a4648);padding:22px;color:white;display:flex;align-items:center}.steps{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.step{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:17px 11px;text-align:center;min-height:115px;display:flex;flex-direction:column;justify-content:center}.step b{font-size:12px}.step span{font-size:9px;color:#c7d7d8;margin-top:6px}.step.done{background:var(--green);color:#17372c}.step.done span{color:#355c4c}.method{background:#102b2f;color:white}.method .head p{color:#c2d0d2}.methodflow{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}.methodflow div{border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:18px 12px;background:rgba(255,255,255,.05)}.methodflow b{display:block;font-size:13px}.methodflow span{display:block;font-size:10px;color:#b9c9cb;margin-top:6px}.contact{padding:90px 0}.contactbox{background:white;border:1px solid var(--line);border-radius:30px;padding:38px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.contact h2{font-size:clamp(38px,5vw,62px);line-height:.98;letter-spacing:-.055em;margin:10px 0}.contact p{color:var(--muted);max-width:680px}footer{padding:24px 0 38px;color:#75868a;font-size:11px}@media(max-width:900px){.hero,.head,.project,.contactbox{grid-template-columns:1fr}.hero{padding-top:48px}.hero-panel{min-height:390px}.navlinks{display:none}.methodflow{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.wrap{width:min(100% - 24px,var(--max))}.hero h1{font-size:52px}.flow,.steps{grid-template-columns:1fr 1fr}.project{padding:16px}.visual{min-height:280px}}
-</style>
-</head>
-<body>
-<nav><div class="wrap nav"><div class="brand"><div class="brandmark">REG</div>Rizky Esa Gumilar</div><div class="navlinks"><a href="#projects">Projects</a><a href="#method">How It Works</a><a href="#contact">Contact</a></div><a class="cta" href="#contact">View Contact</a></div></nav>
-<main>
-<div class="wrap hero"><div><div class="eyebrow">Finance Control · Reporting · Automation</div><h1>Finance, data, dan automation.<br><span>Didokumentasikan lewat proses yang nyata.</span></h1><p>Portfolio ini merangkum beberapa workflow finance dan automation yang pernah saya bangun. Setiap contoh dibuat sederhana: <strong>apa yang masuk, apa yang diproses, dan apa hasil akhirnya.</strong></p><div class="actions"><a class="btn primary" href="#projects">Lihat project</a><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></div></div><div class="hero-panel"><div class="panelin"><div class="eyebrow" style="color:#c4d4d5">Finance + Systems</div><div class="profile"><h3>Rizky Esa Gumilar</h3><p>Finance Controller · Accounting Background · Indonesia</p></div><div class="flow"><div>Data masuk</div><div>Diperiksa</div><div>Dirapikan</div><div class="active">Siap dibaca</div></div></div></div></div>
-<div class="trust"><div class="wrap trustin"><span>Finance Control</span><span>Google Sheets</span><span>Apps Script</span><span>Automation</span><span>Reporting</span></div></div>
-<section id="projects"><div class="wrap"><div class="head"><div><div class="eyebrow">Historical projects</div><h2>Project dijelaskan dari input sampai output.</h2></div><p>Nama perusahaan, detail akun, dan data sensitif disamarkan. Fokus portfolio adalah cara kerja sistem dan dampaknya pada proses.</p></div><div class="projects">
-<article class="project"><div><div class="eyebrow">01 · Reporting</div><h3>Automated Sales & Financial Reporting</h3><p>Beberapa file penjualan masuk, sistem merapikan dan memvalidasi data, lalu hasilnya disusun menjadi laporan yang lebih mudah dibaca.</p><div class="tags"><span>Sales Data</span><span>Reconciliation</span><span>Reporting</span></div></div><div class="visual"><div class="steps"><div class="step"><b>Upload</b><span>File penjualan</span></div><div class="step"><b>Read</b><span>Baca struktur data</span></div><div class="step"><b>Check</b><span>Validasi & rapikan</span></div><div class="step done"><b>Report</b><span>Siap dibaca</span></div></div></div></article>
-<article class="project"><div><div class="eyebrow">02 · Banking</div><h3>Bank Statement Import & Transaction Matching</h3><p>Mutasi bank diunggah lalu sistem membantu membedakan transaksi yang sudah cocok dan transaksi yang masih perlu ditinjau.</p><div class="tags"><span>Bank Mutation</span><span>Matching</span><span>Review</span></div></div><div class="visual"><div class="steps"><div class="step"><b>Upload</b><span>Mutasi bank</span></div><div class="step"><b>Match</b><span>Cocokkan transaksi</span></div><div class="step"><b>Review</b><span>Tandai yang meragukan</span></div><div class="step done"><b>Ready</b><span>Prioritas jelas</span></div></div></div></article>
-<article class="project"><div><div class="eyebrow">03 · Accounting</div><h3>Automated Journal & Ledger</h3><p>Transaksi yang sudah bersih diarahkan ke akun yang sesuai, lalu jurnal dan pencatatan disiapkan dengan pola yang lebih konsisten.</p><div class="tags"><span>COA Mapping</span><span>Journal</span><span>Ledger</span></div></div><div class="visual"><div class="steps"><div class="step"><b>Read</b><span>Baca transaksi</span></div><div class="step"><b>Map</b><span>Pilih akun</span></div><div class="step"><b>Post</b><span>Susun jurnal</span></div><div class="step done"><b>Ledger</b><span>Lebih konsisten</span></div></div></div></article>
-<article class="project"><div><div class="eyebrow">04 · Operations</div><h3>Return & Approval Tracking</h3><p>Status retur, pengajuan, dan approval dibuat lebih mudah ditelusuri sehingga tim dapat melihat apa yang selesai dan apa yang masih perlu tindakan.</p><div class="tags"><span>Return</span><span>Approval</span><span>Status Tracking</span></div></div><div class="visual"><div class="steps"><div class="step"><b>Submit</b><span>Data masuk</span></div><div class="step"><b>Check</b><span>Status diperiksa</span></div><div class="step"><b>Update</b><span>Riwayat tersimpan</span></div><div class="step done"><b>Complete</b><span>Mudah ditelusuri</span></div></div></div></article>
-</div></div></section>
-<section id="method" class="method"><div class="wrap"><div class="head"><div><div class="eyebrow" style="color:#b9cbcd">How it works</div><h2>Proses dibuat sederhana. Kontrol tetap terlihat.</h2></div><p>Pola dasarnya sama: data masuk, dibaca, dirapikan, dicek, lalu disusun menjadi output yang lebih terstruktur.</p></div><div class="methodflow"><div><b>01 · Masuk</b><span>File, form, atau data diterima</span></div><div><b>02 · Baca</b><span>Sistem memahami data</span></div><div><b>03 · Rapikan</b><span>Format dibuat konsisten</span></div><div><b>04 · Cek</b><span>Masalah ditandai</span></div><div><b>05 · Susun</b><span>Output dibentuk</span></div><div><b>06 · Siap</b><span>Pengguna membaca hasil</span></div></div></div></section>
-<section id="contact" class="contact"><div class="wrap"><div class="contactbox"><div><div class="eyebrow">Professional portfolio</div><h2>Finance & automation project documentation.</h2><p>Versi awal landing page portfolio. Selanjutnya setiap project dapat dikembangkan menjadi case study lengkap dengan screenshot, flow, dan hasil implementasi.</p></div><a class="btn primary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">Open LinkedIn</a></div></div></section>
-</main><footer><div class="wrap">Rizky Esa Gumilar · Professional Portfolio · Indonesia</div></footer>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rizky Esa Gumilar — Strategic Finance &amp; Decision Intelligence</title>
+    <meta
+      name="description"
+      content="Strategic Finance &amp; Decision Intelligence. Mengubah informasi keuangan yang tersebar menjadi tampilan manajemen yang terpercaya, relevan, dan siap dipakai untuk mengambil keputusan lebih cepat."
+    />
+    <meta name="author" content="Rizky Esa Gumilar" />
+    <meta name="theme-color" content="#0a0b0d" />
+    <link rel="canonical" href="https://alfaname.github.io/rizky-esa-gumilar-portfolio/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rizky Esa Gumilar" />
+    <meta property="og:title" content="Rizky Esa Gumilar — Financial clarity for faster decisions." />
+    <meta
+      property="og:description"
+      content="Strategic Finance &amp; Decision Intelligence — mempersingkat jarak antara informasi keuangan dan keputusan manajemen."
+    />
+    <meta property="og:url" content="https://alfaname.github.io/rizky-esa-gumilar-portfolio/" />
+    <meta property="og:image" content="https://alfaname.github.io/rizky-esa-gumilar-portfolio/assets/img/og-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Rizky Esa Gumilar — Financial clarity for faster decisions." />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rizky Esa Gumilar — Financial clarity for faster decisions." />
+    <meta
+      name="twitter:description"
+      content="Strategic Finance &amp; Decision Intelligence — mempersingkat jarak antara informasi keuangan dan keputusan manajemen."
+    />
+    <meta name="twitter:image" content="https://alfaname.github.io/rizky-esa-gumilar-portfolio/assets/img/og-cover.jpg" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-var.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/jakarta-var.woff2" crossorigin />
+    <link rel="preload" as="image" href="assets/img/portrait-hero.webp" imagesrcset="assets/img/portrait-hero-480.webp 480w, assets/img/portrait-hero.webp 768w" imagesizes="(max-width: 860px) 380px, 520px" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rizky Esa Gumilar",
+        "jobTitle": "Strategic Finance & Decision Intelligence",
+        "address": { "@type": "PostalPlace", "name": "Bandung, Indonesia" },
+        "url": "https://alfaname.github.io/rizky-esa-gumilar-portfolio/",
+        "sameAs": ["https://www.linkedin.com/in/rizkyesagumilar"],
+        "knowsLanguage": ["id", "en"]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">Lewati ke konten utama</a>
+    <div class="scroll-rule" id="scrollRule" aria-hidden="true"></div>
+
+    <header class="nav" id="nav">
+      <div class="page nav__inner">
+        <a class="brand" href="#top" aria-label="Rizky Esa Gumilar — beranda">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#bb862b" stroke-width="2" />
+            <path
+              d="M20 46V18h13.5c5.4 0 9 3.2 9 8.1 0 3.9-2.3 6.7-6.1 7.6L44 46h-6.6l-6.7-11.4h-4.4V46H20zm6.3-16.6h6.4c2.6 0 4.1-1.2 4.1-3.3s-1.5-3.3-4.1-3.3h-6.4v6.6z"
+              fill="#e3b15c"
+            />
+            <rect x="20" y="49.5" width="24" height="2.4" fill="#bb862b" />
+          </svg>
+          <span>
+            <span class="brand__name">Rizky Esa Gumilar</span>
+            <span class="brand__role">Strategic Finance &amp; Decision Intelligence</span>
+          </span>
+        </a>
+
+        <nav class="nav__links" id="navLinks" aria-label="Navigasi utama">
+          <a href="#vision" data-i18n="nav.vision">Visi</a>
+          <a href="#compression" data-i18n="nav.compression">Kompresi Keputusan</a>
+          <a href="#work" data-i18n="nav.work">Karya</a>
+          <a href="#method" data-i18n="nav.method">Cara Kerja</a>
+          <a href="#about" data-i18n="nav.about">Tentang</a>
+          <a class="btn btn--primary btn--sm nav__cta-mobile" href="#contact" data-i18n="cta.primary"
+            >Perjelas Langkah Berikutnya →</a
+          >
+        </nav>
+
+        <div class="nav__end">
+          <div class="lang" role="group" aria-label="Language / Bahasa">
+            <button class="lang__btn" type="button" data-lang="id" aria-pressed="true">ID</button>
+            <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+          <a class="btn btn--ghost btn--sm nav__cta" id="navCta" href="#contact">
+            <span data-i18n="cta.short">Perjelas Langkah</span>
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+            <span></span>
+            <span class="u-visually-hidden" data-i18n="nav.menu">Buka menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============================ HERO ============================ -->
+      <section class="hero" id="top">
+        <div class="hero__lamp" aria-hidden="true"></div>
+        <div class="hero__ledger" aria-hidden="true"></div>
+        <div class="page hero__grid">
+          <div class="hero__head">
+            <p class="eyebrow eyebrow--brass">Strategic Finance &amp; Decision Intelligence</p>
+            <h1 class="display hero__title">
+              <span class="hero__line"><span>Financial clarity</span></span>
+              <span class="hero__line"><span>for faster <em class="accent-italic">decisions.</em></span></span>
+            </h1>
+          </div>
+
+          <figure class="hero__portrait">
+            <img
+              id="heroPortrait"
+              src="assets/img/portrait-hero.webp"
+              srcset="assets/img/portrait-hero-480.webp 480w, assets/img/portrait-hero.webp 768w"
+              sizes="(max-width: 860px) 300px, 520px"
+              width="768"
+              height="1086"
+              alt="Rizky Esa Gumilar"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <figcaption class="hero__caption">Bandung, Indonesia</figcaption>
+          </figure>
+
+          <div class="hero__body">
+            <p class="lead hero__sub" data-i18n="hero.sub">
+              Saya membantu manajemen melihat apa yang benar-benar penting dari informasi keuangan dan operasional —
+              lebih cepat, lebih jelas, dan cukup terukur untuk menentukan langkah berikutnya.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" id="heroCta" href="#contact">
+                <span data-i18n="cta.primary">Perjelas Langkah Berikutnya</span>
+                <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="btn btn--ghost" href="#work">
+                <span data-i18n="hero.secondary">Lihat karya nyata</span>
+                <span class="btn__arrow" aria-hidden="true">↓</span>
+              </a>
+            </div>
+
+            <p class="hero__progression" aria-label="Complexity to decision">
+              <span data-i18n="prog.1">Kompleksitas</span> <i aria-hidden="true">→</i>
+              <span data-i18n="prog.2">Kejelasan</span> <i aria-hidden="true">→</i>
+              <span data-i18n="prog.3">Sinyal</span> <i aria-hidden="true">→</i>
+              <span data-i18n="prog.4">Prioritas</span> <i aria-hidden="true">→</i>
+              <b data-i18n="prog.5">Keputusan</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ VISION ============================ -->
+      <section class="section vision" id="vision">
+        <div class="page">
+          <div class="caption">
+            <span class="eyebrow" data-i18n="vision.eyebrow">Visi</span>
+            <span class="caption__rule"></span>
+            <span class="caption__index">§ 01</span>
+          </div>
+          <div class="vision__grid">
+            <h2 class="display vision__statement reveal" data-i18n="vision.statement">
+              Informasi keuangan harus mengarahkan keputusan, bukan hanya mencatat hasil.
+            </h2>
+            <div class="vision__aside reveal">
+              <p class="vision__note" data-i18n="vision.note">
+                Di banyak bisnis, angka sebenarnya sudah tersedia. Yang hilang adalah jarak antara angka itu dan
+                keputusan: terlalu lama dikumpulkan, terlalu sulit dipercaya, dan terlalu jauh dari pertanyaan yang
+                sedang dihadapi manajemen.
+              </p>
+              <div class="vision__gap">
+                <div class="gap-item">
+                  <span class="gap-item__k">01</span>
+                  <span class="gap-item__v" data-i18n="vision.gap1"
+                    >Informasi tersebar di banyak sumber dan format</span
+                  >
+                </div>
+                <div class="gap-item">
+                  <span class="gap-item__k">02</span>
+                  <span class="gap-item__v" data-i18n="vision.gap2"
+                    >Validasi manual membuat laporan datang setelah momen keputusan lewat</span
+                  >
+                </div>
+                <div class="gap-item">
+                  <span class="gap-item__k">03</span>
+                  <span class="gap-item__v" data-i18n="vision.gap3"
+                    >Laporan menjelaskan masa lalu, tetapi tidak menunjuk apa yang perlu diputuskan</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== DECISION COMPRESSION ==================== -->
+      <section class="section compress" id="compression">
+        <div class="page">
+          <div class="caption">
+            <span class="eyebrow" data-i18n="compress.eyebrow">Pengalaman Utama — Kompresi Keputusan</span>
+            <span class="caption__rule"></span>
+            <span class="caption__index">§ 02</span>
+          </div>
+        </div>
+
+        <div class="compress__stage" id="compressStage">
+          <div class="compress__sticky">
+            <div class="page compress__legend">
+              <div class="compress__step">
+                <h2 class="compress__step-title" id="compressTitle" data-i18n="compress.s1.t">
+                  Informasi datang dari banyak arah.
+                </h2>
+                <p class="compress__step-body" id="compressBody" data-i18n="compress.s1.b">
+                  Ekspor marketplace, mutasi bank, biaya proyek, tagihan, piutang. Setiap sumber punya format, waktu,
+                  dan tingkat kepercayaan yang berbeda.
+                </p>
+              </div>
+              <div>
+                <div class="compress__ticks" id="compressTicks" aria-hidden="true">
+                  <span class="compress__tick"></span><span class="compress__tick"></span
+                  ><span class="compress__tick"></span><span class="compress__tick"></span
+                  ><span class="compress__tick"></span>
+                </div>
+                <p class="compress__payoff" data-i18n="compress.payoff">
+                  Lebih sedikit waktu mengumpulkan informasi. Lebih banyak waktu memutuskan apa yang penting.
+                </p>
+              </div>
+            </div>
+
+            <div class="page compress__canvas-wrap">
+              <canvas class="compress__canvas" id="compressCanvas" aria-hidden="true"></canvas>
+            </div>
+
+            <div class="page">
+              <div class="compress__static" id="compressStatic">
+                <div class="compress__static-cell">
+                  <h3 data-i18n="compress.s1.t2">Banyak sumber</h3>
+                  <p data-i18n="compress.s1.b2">Ekspor marketplace, mutasi bank, biaya proyek, tagihan, piutang.</p>
+                </div>
+                <div class="compress__static-cell">
+                  <h3 data-i18n="compress.s2.t2">Divalidasi</h3>
+                  <p data-i18n="compress.s2.b2">Dicocokkan, direkonsiliasi, dan diberi konteks akuntansi.</p>
+                </div>
+                <div class="compress__static-cell">
+                  <h3 data-i18n="compress.s3.t2">Tampilan manajemen</h3>
+                  <p data-i18n="compress.s3.b2">Satu struktur yang bisa dibaca bersama oleh manajemen.</p>
+                </div>
+                <div class="compress__static-cell">
+                  <h3 data-i18n="compress.s4.t2">Sinyal</h3>
+                  <p data-i18n="compress.s4.b2">Detail yang tidak mengubah keputusan dipadamkan.</p>
+                </div>
+                <div class="compress__static-cell">
+                  <h3 data-i18n="compress.s5.t2">Keputusan</h3>
+                  <p data-i18n="compress.s5.b2">Prioritas terlihat dan pilihan tindakan menjadi jelas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decision intelligence matrix — the compressed output -->
+        <div class="page section--tight" id="intelligence">
+          <div class="caption">
+            <span class="eyebrow" data-i18n="matrix.eyebrow">Yang tersisa: lima pertanyaan manajemen</span>
+            <span class="caption__rule"></span>
+            <span class="caption__index">§ 02.1</span>
+          </div>
+          <div class="matrix">
+            <div class="matrix__list" role="tablist" aria-label="Decision intelligence" id="matrixList"></div>
+            <div class="matrix__panel" id="matrixPanel" role="tabpanel" tabindex="0"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ WORK ============================ -->
+      <section class="section" id="work">
+        <div class="page">
+          <div class="caption">
+            <span class="eyebrow" data-i18n="work.eyebrow">Karya Terpilih — Output Nyata</span>
+            <span class="caption__rule"></span>
+            <span class="caption__index">§ 03</span>
+          </div>
+          <div class="work__intro">
+            <h2 class="display work__title reveal" data-i18n="work.title">
+              Tiga pertanyaan manajemen, tiga cara menjawabnya.
+            </h2>
+            <p class="lead reveal" data-i18n="work.note">
+              Setiap studi kasus dibangun ulang dari logika laporan yang benar-benar saya kerjakan: struktur perhitungan,
+              hubungan antar angka, dan pertanyaan yang harus dijawab. Angkanya sendiri sudah disamarkan untuk publik.
+            </p>
+          </div>
+
+          <article class="case" id="case-1"></article>
+          <article class="case" id="case-2"></article>
+          <article class="case" id="case-3"></article>
+        </div>
+      </section>
+
+      <!-- ========================== HOW I WORK ========================== -->
+      <section class="section method" id="method">
+        <div class="page">
+          <div class="caption">
+            <span class="eyebrow" data-i18n="method.eyebrow">Cara Kerja</span>
+            <span class="caption__rule"></span>
+            <span class="caption__index">§ 04</span>
+          </div>
+        </div>
+
+        <div class="method__stage" id="methodStage">
+          <div class="method__sticky">
+            <div class="page">
+              <h2 class="display" style="font-size: clamp(1.8rem, 1.2rem + 2.2vw, 3rem); max-width: 20ch" data-i18n="method.title">
+                Dari pertanyaan manajemen sampai laporan siap keputusan.
+              </h2>
+            </div>
+            <div class="page method__grid">
+              <ol class="method__beats" id="methodBeats"></ol>
+
+              <div class="method__viewport">
+                <div class="method__portrait" id="methodPortrait">
+                  <img src="assets/img/portrait-square.webp" width="520" height="520" alt="" loading="lazy" decoding="async" />
+                  <p class="method__quote" data-i18n="method.quote">
+                    “Pertanyaannya jarang ‘berapa angkanya’. Pertanyaannya adalah apa yang harus dilakukan setelah
+                    melihat angkanya.”
+                  </p>
+                </div>
+
+                <div class="method__report" id="methodReport" aria-hidden="true">
+                  <div class="method__report-bar">
+                    <span data-i18n="method.report">Management View</span>
+                    <span id="methodStamp">—</span>
+                  </div>
+                  <div class="method__sources" id="methodSources"></div>
+                  <div class="method__panel">
+                    <div class="method__chart" id="methodChart"></div>
+                    <div class="method__side" id="methodSide"></div>
+                  </div>
+                </div>
+                <div class="method__decide" id="methodDecide"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= SUPPORTING WORK ======================= -->
+      <section class="section section--tight" id="support">
+        <div class="page">
+          <div class="caption">
+            <span class="eyebrow" data-i18n="support.eyebrow">Pekerjaan Pendukung</span>
+            <span class="caption__rule"></span>
+            <span class="caption__index">§ 05</span>
+          </div>
+          <div class="support__grid" id="supportGrid"></div>
+        </div>
+      </section>
+
+      <!-- ============================ ABOUT ============================ -->
+      <section class="section about" id="about">
+        <div class="page">
+          <div class="caption">
+            <span class="eyebrow" data-i18n="about.eyebrow">Tentang &amp; Cara Berpikir</span>
+            <span class="caption__rule"></span>
+            <span class="caption__index">§ 06</span>
+          </div>
+          <div class="about__grid">
+            <figure class="about__portrait reveal">
+              <img src="assets/img/portrait-square.webp" width="520" height="520" alt="Rizky Esa Gumilar" loading="lazy" decoding="async" />
+              <figcaption class="about__stamp">Bandung, Indonesia</figcaption>
+            </figure>
+            <div class="reveal">
+              <p class="about__lede" data-i18n="about.lede">
+                Finance-minded. Strategy-driven. Technology-enabled.
+              </p>
+              <div class="about__body">
+                <p data-i18n="about.p1">
+                  Latar belakang saya adalah keuangan dan akuntansi: menyusun laporan, menjaga kontrol, dan memastikan
+                  angka bisa dipertanggungjawabkan. Yang membuat saya bertahan di bidang ini bukan laporannya, tetapi
+                  momen ketika sebuah angka akhirnya mengubah cara manajemen mengambil langkah.
+                </p>
+                <p data-i18n="about.p2">
+                  Karena itu saya bekerja dari arah sebaliknya: mulai dari keputusan yang harus diambil, lalu menyusun
+                  informasi seperlunya untuk sampai ke sana. Otomasi, dashboard, dan integrasi data hanyalah cara
+                  mempersingkat jaraknya — bukan tujuannya.
+                </p>
+                <p data-i18n="about.p3">
+                  Pengalaman saya mencakup keuangan multi-entitas, marketplace, proyek, pelaporan manajemen, dan
+                  pengendalian keuangan. Riwayat karier lengkap tersedia di LinkedIn.
+                </p>
+              </div>
+              <div class="principles" id="principles"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================== CONTACT =========================== -->
+      <section class="section contact" id="contact">
+        <div class="page">
+          <div class="caption">
+            <span class="eyebrow" data-i18n="contact.eyebrow">Kontak</span>
+            <span class="caption__rule"></span>
+            <span class="caption__index">§ 07</span>
+          </div>
+          <div class="contact__grid">
+            <div>
+              <h2 class="display contact__title" data-i18n="contact.title">
+                Mari perjelas langkah berikutnya.
+              </h2>
+              <p class="lead" data-i18n="contact.note">
+                Ceritakan pertanyaan keuangan yang sedang mengganjal di bisnis Anda — margin, kas, piutang, atau kinerja
+                proyek. Saya akan menanggapi dengan cara pandang, bukan penawaran.
+              </p>
+              <div class="contact__actions">
+                <a class="btn btn--primary" id="contactCta" href="#" rel="noopener">
+                  <span data-i18n="cta.primary">Perjelas Langkah Berikutnya</span>
+                  <span class="btn__arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact__list">
+              <a
+                class="contact__row"
+                id="waRow"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <span class="contact__k">WhatsApp</span>
+                <span class="contact__v" data-i18n="contact.wa">Percakapan langsung</span>
+                <span class="contact__ico" aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="contact__row"
+                href="https://www.linkedin.com/in/rizkyesagumilar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <span class="contact__k">LinkedIn</span>
+                <span class="contact__v">linkedin.com/in/rizkyesagumilar</span>
+                <span class="contact__ico" aria-hidden="true">↗</span>
+              </a>
+              <a class="contact__row" href="mailto:rizkyesagumilar@gmail.com" aria-label="Email">
+                <span class="contact__k">Email</span>
+                <span class="contact__v">rizkyesagumilar@gmail.com</span>
+                <span class="contact__ico" aria-hidden="true">↗</span>
+              </a>
+              <div class="contact__row">
+                <span class="contact__k" data-i18n="contact.loc">Lokasi</span>
+                <span class="contact__v">Bandung, Indonesia</span>
+                <span class="contact__ico" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="page foot__inner">
+        <p class="foot__note" data-i18n="foot.note">
+          Seluruh angka pada situs ini adalah rekonstruksi aman-publik yang mempertahankan logika keuangan aslinya, bukan
+          data perusahaan.
+        </p>
+        <p>© <span id="year">2026</span> Rizky Esa Gumilar</p>
+      </div>
+    </footer>
+
+    <div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/case-studies.js"></script>
+    <script src="assets/js/compression.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

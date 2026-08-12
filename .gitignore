@@ -1,0 +1,16 @@
+# Portfolio private handoff / working sources
+**/*DO_NOT_COMMIT*/
+**/PRIVATE_SOURCE_REFERENCES_DO_NOT_COMMIT/
+**/PRIVATE_REFERENCE_FILES_DO_NOT_COMMIT/
+.claude/PORTFOLIO_STATE.md
+CLAUDE_PRIVATE_NOTES.md
+*.private.*
+.env
+.env.*
+.DS_Store
+
+# Tooling
+node_modules/
+npm-debug.log*
+Thumbs.db
+.claude/
