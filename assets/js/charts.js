@@ -417,7 +417,7 @@
     var padT = 18,
       padB = 30,
       padR = 6,
-      padL = 34;
+      padL = 66;
     var sets = opts.series;
     var labels = opts.labels;
     var max = 0;
@@ -453,7 +453,9 @@
     svg.appendChild(gridLines(padL, w - padR, ticks, y));
     ticks.forEach(function (tk, i) {
       if (i === 0 && opts.zeroBased !== false) return;
-      svg.appendChild(text(opts.fmtTick(tk), { x: 0, y: y(tk) + 3, class: 'ch-tick' }));
+      svg.appendChild(
+        text(opts.fmtTick(tk), { x: padL - 10, y: y(tk) + 3, class: 'ch-tick', 'text-anchor': 'end' })
+      );
     });
 
     sets.forEach(function (s) {

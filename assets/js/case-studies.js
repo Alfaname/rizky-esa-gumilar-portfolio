@@ -401,8 +401,8 @@
       {
         t: { id: 'Kanal terbesar bukan kanal paling efisien.', en: 'The largest channel is not the most efficient one.' },
         d: {
-          id: 'Kanal dengan penjualan bersih terbesar membawa biaya kanal 17,0% sementara kanal terkecil kedua hanya 15,0% — selisih itu terjadi setiap bulan.',
-          en: 'The channel with the largest net sales carries a 17.0% channel cost while a smaller one carries only 15.0% — that gap repeats every month.',
+          id: 'Kanal dengan penjualan bersih terbesar membawa biaya kanal 17,0% sementara kanal terkecil kedua hanya 15,0% — selisih yang berulang di setiap periode.',
+          en: 'The channel with the largest net sales carries a 17.0% channel cost while a smaller one carries only 15.0% — a gap that repeats every period.',
         },
       },
       {

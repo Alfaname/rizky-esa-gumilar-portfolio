@@ -370,7 +370,9 @@ ol {
 }
 .nav__links a {
   position: relative;
-  padding-block: 0.35rem;
+  padding: 0.4rem 0.25rem;
+  min-width: 26px;
+  text-align: center;
   transition: color 0.2s var(--ease);
 }
 .nav__links a::after {
@@ -647,6 +649,7 @@ ol {
 .compress {
   border-top: 1px solid var(--line);
   position: relative;
+  padding-bottom: 0;
 }
 .compress__stage {
   position: relative;

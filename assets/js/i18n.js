@@ -86,6 +86,8 @@
       'Latar belakang saya adalah keuangan dan akuntansi: menyusun laporan, menjaga kontrol, dan memastikan angka bisa dipertanggungjawabkan. Yang membuat saya bertahan di bidang ini bukan laporannya, tetapi momen ketika sebuah angka akhirnya mengubah cara manajemen mengambil langkah.',
     'about.p2':
       'Karena itu saya bekerja dari arah sebaliknya: mulai dari keputusan yang harus diambil, lalu menyusun informasi seperlunya untuk sampai ke sana. Otomasi, dashboard, dan integrasi data hanyalah cara mempersingkat jaraknya — bukan tujuannya.',
+    'about.p4':
+      'Satu hal yang tidak bisa ditawar: kerahasiaan. Semua contoh di situs ini sengaja disamarkan — logikanya nyata, angkanya tidak. Disiplin yang sama berlaku untuk data siapa pun yang saya pegang.',
     'about.p3':
       'Pengalaman saya mencakup keuangan multi-entitas, marketplace, proyek, pelaporan manajemen, dan pengendalian keuangan. Riwayat karier lengkap tersedia di LinkedIn.',
 
@@ -194,6 +196,8 @@
       'My background is finance and accounting: building the reports, holding the controls, making sure the numbers stand up. What kept me in this field was never the report itself — it was the moment a number finally changed how management moved.',
     'about.p2':
       'So I work backwards from that: start with the decision that has to be made, then assemble only the information needed to get there. Automation, dashboards and data integration are simply how the distance gets shorter — never the point.',
+    'about.p4':
+      'One thing is not negotiable: confidentiality. Every example on this site is deliberately anonymised — the logic is real, the numbers are not. The same discipline applies to anyone else’s data I handle.',
     'about.p3':
       'My experience spans multi-entity finance, marketplace finance, project finance, management reporting and financial control. The full career history lives on LinkedIn.',
 
