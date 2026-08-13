@@ -97,9 +97,9 @@
       'Satu hal yang tidak bisa ditawar: kerahasiaan. Semua contoh di situs ini sengaja disamarkan — logikanya nyata, angkanya tidak. Disiplin yang sama berlaku untuk data siapa pun yang saya pegang.',
 
     'contact.eyebrow': 'Kontak',
-    'contact.title': 'Mari perjelas langkah berikutnya.',
+    'contact.title': 'Terbuka untuk berdiskusi.',
     'contact.note':
-      'Ceritakan pertanyaan keuangan yang sedang mengganjal di bisnis Anda — margin, kas, piutang, atau kinerja proyek. Saya akan menanggapi dengan cara pandang, bukan penawaran.',
+      'Situs ini saya buat untuk menunjukkan cara saya membaca angka dan sampai pada keputusan. Kalau ada yang menarik untuk dibicarakan — margin, kas, piutang, kinerja proyek, atau hal lain di sekitarnya — silakan sapa. Tidak harus ada proyek.',
     'contact.wa': 'Percakapan langsung',
     'contact.loc': 'Lokasi',
 
@@ -210,9 +210,9 @@
       'One thing is not negotiable: confidentiality. Every example on this site is deliberately anonymised — the logic is real, the numbers are not. The same discipline applies to anyone else’s data I handle.',
 
     'contact.eyebrow': 'Contact',
-    'contact.title': "Let's clarify the next move.",
+    'contact.title': 'Open to a conversation.',
     'contact.note':
-      'Tell me the financial question that is currently unresolved in your business — margin, cash, receivables or project performance. You will get a point of view back, not a pitch.',
+      'This site exists to show how I read numbers and get to a decision. If something here is worth talking about — margin, cash, receivables, project performance, or anything around them — say hello. There does not have to be a project.',
     'contact.wa': 'Direct conversation',
     'contact.loc': 'Location',
 
