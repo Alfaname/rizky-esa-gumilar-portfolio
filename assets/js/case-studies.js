@@ -303,25 +303,16 @@
 
     var report = el('div', 'report');
     var bar = el('div', 'report__bar');
-    bar.appendChild(el('span', 'report__title', L(spec.panel)));
+    var title = el('span', 'report__title', L(spec.panel));
+    // The sanitisation note travels with the numbers as a stamp on the report's
+    // own header, rather than as a paragraph repeated under every panel.
+    title.appendChild(el('span', 'report__stamp', T.t('ui.anonymised')));
+    bar.appendChild(title);
     var controls = el('div', 'report__controls');
     bar.appendChild(controls);
     report.appendChild(bar);
     var body = el('div', 'report__body');
     report.appendChild(body);
-
-    var foot = el('div', 'report__foot');
-    var ico = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    ico.setAttribute('viewBox', '0 0 16 16');
-    ico.setAttribute('width', '13');
-    ico.setAttribute('height', '13');
-    ico.setAttribute('aria-hidden', 'true');
-    ico.innerHTML =
-      '<circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M8 7.2v4M8 4.8v.9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>';
-    foot.appendChild(ico);
-    var footText = el('span', null, T.t('ui.disclosure'));
-    foot.appendChild(footText);
-    report.appendChild(foot);
     host.appendChild(report);
 
     var outcome = el('div', 'case__outcome');
@@ -396,8 +387,8 @@
     name: { id: 'Marketplace Financial Intelligence', en: 'Marketplace Financial Intelligence' },
     question: { id: 'Di mana pendapatan benar-benar berubah menjadi laba?', en: 'Where is revenue actually turning into profit?' },
     blurb: {
-      id: 'Penjualan dari empat kanal marketplace disatukan sampai ke tingkat margin: penjualan kotor, diskon penjual, biaya kanal, HPP, lalu settlement dan piutang. Pertanyaannya bukan berapa yang terjual, tetapi berapa yang benar-benar tersisa.',
-      en: 'Sales from four marketplace channels brought together down to margin level: gross sales, seller discounts, channel costs, COGS, then settlement and receivables. The question is not how much sold, but how much actually remained.',
+      id: 'Empat kanal marketplace disatukan sampai ke tingkat margin: penjualan kotor, diskon penjual, biaya kanal, HPP, lalu settlement dan piutang.',
+      en: 'Four marketplace channels brought together down to margin level: gross sales, seller discounts, channel costs, COGS, then settlement and receivables.',
     },
     panel: { id: 'Laporan Profitabilitas Marketplace', en: 'Marketplace Profitability Report' },
     keySignal: {
@@ -863,8 +854,8 @@
     name: { id: 'Project Financial Performance', en: 'Project Financial Performance' },
     question: { id: 'Apakah proyek ini masih sehat secara keuangan?', en: 'Is this project financially on track?' },
     blurb: {
-      id: 'Satu proyek dibaca dari dua jalur yang sengaja dipisah: jalur laba (nilai proyek → biaya → margin) dan jalur kas (termin → kas diterima → sisa penagihan). Proyek bisa untung di atas kertas dan tetap kekurangan kas.',
-      en: 'One project read along two deliberately separated paths: the profit path (project value → cost → margin) and the cash path (terms → cash received → outstanding collection). A project can be profitable on paper and still be short of cash.',
+      id: 'Satu proyek dibaca lewat dua jalur yang sengaja dipisah: jalur laba (nilai proyek → biaya → margin) dan jalur kas (termin → kas diterima → sisa penagihan).',
+      en: 'One project read along two deliberately separated paths: the profit path (project value → cost → margin) and the cash path (terms → cash received → outstanding collection).',
     },
     panel: { id: 'Laporan Kinerja Proyek — Proyek A', en: 'Project Performance Report — Project A' },
     keySignal: {
@@ -1191,8 +1182,8 @@
     name: { id: 'Cash & Financial Visibility', en: 'Cash & Financial Visibility' },
     question: { id: 'Apa yang berubah pada kas, dan apa yang perlu perhatian sekarang?', en: 'What changed in cash, and what needs attention now?' },
     blurb: {
-      id: 'Pergerakan rekening diklasifikasikan ke konteks akuntansi, direkonsiliasi, lalu disajikan sebagai posisi kas beserta daftar eksepsi. Nilainya bukan pada mengunggah mutasi, tetapi pada membuat informasi kas layak dipakai untuk memutuskan.',
-      en: 'Account movement is classified into accounting context, reconciled, then presented as a cash position together with its exception list. The value is not in uploading statements — it is in making cash information fit to decide on.',
+      id: 'Pergerakan rekening diklasifikasikan ke konteks akuntansi, direkonsiliasi, lalu disajikan sebagai posisi kas beserta daftar eksepsinya.',
+      en: 'Account movement is classified into accounting context, reconciled, then presented as a cash position together with its exception list.',
     },
     panel: { id: 'Laporan Visibilitas Kas — Rekening Operasional A', en: 'Cash Visibility Report — Operating Account A' },
     keySignal: {
@@ -1571,12 +1562,7 @@
   function renderThemes() {
     var host = document.getElementById('aboutThemes');
     if (!host) return;
-    host.innerHTML = '';
-    var head = el('li', 'about__themes-k', T.t('about.themes'));
-    host.appendChild(head);
-    THEMES.forEach(function (t) {
-      host.appendChild(el('li', 'about__theme', L(t)));
-    });
+    host.textContent = THEMES.map(L).join(' · ');
   }
 
   function renderPrinciples() {

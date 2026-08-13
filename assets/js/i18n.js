@@ -35,7 +35,7 @@
     'vision.gap2': 'Validasi manual membuat laporan datang setelah momen keputusan lewat',
     'vision.gap3': 'Laporan menjelaskan masa lalu, tetapi tidak menunjuk apa yang perlu diputuskan',
 
-    'compress.eyebrow': 'Pengalaman Utama — Kompresi Keputusan',
+    'compress.eyebrow': 'Bagaimana informasi menjadi keputusan',
     'compress.payoff':
       'Lebih sedikit waktu mengumpulkan informasi. Lebih banyak waktu memutuskan apa yang penting.',
     'compress.s1.t': 'Informasi datang dari banyak arah.',
@@ -71,7 +71,7 @@
     'work.eyebrow': 'Karya Terpilih — Output Nyata',
     'work.title': 'Tiga pertanyaan manajemen, tiga cara menjawabnya.',
     'work.note':
-      'Setiap studi kasus dibangun ulang dari logika laporan yang benar-benar saya kerjakan: struktur perhitungan, hubungan antar angka, dan pertanyaan yang harus dijawab. Angkanya sendiri sudah disamarkan untuk publik.',
+      'Setiap studi kasus mengikuti logika laporan yang saya kerjakan: struktur perhitungannya, hubungan antar angkanya, dan pertanyaan yang harus dijawab.',
 
     'method.eyebrow': 'Cara Kerja',
     'method.title': 'Dari pertanyaan manajemen sampai laporan siap keputusan.',
@@ -87,8 +87,6 @@
     'about.lede3': 'Technology-enabled.',
     'about.factBase': 'Basis',
     'about.factLang': 'Bahasa kerja',
-    'about.factFor': 'Untuk',
-    'about.factForV': 'Owner, BOD, CFO, dan pimpinan keuangan',
     'about.themes': 'Ruang lingkup',
     'about.linkedin': 'Riwayat karier lengkap tersedia di',
     'about.p1':
@@ -104,8 +102,6 @@
       'Ceritakan pertanyaan keuangan yang sedang mengganjal di bisnis Anda — margin, kas, piutang, atau kinerja proyek. Saya akan menanggapi dengan cara pandang, bukan penawaran.',
     'contact.wa': 'Percakapan langsung',
     'contact.loc': 'Lokasi',
-    'foot.note':
-      'Seluruh angka pada situs ini adalah rekonstruksi aman-publik yang mempertahankan logika keuangan aslinya, bukan data perusahaan.',
 
     /* ---- shared UI ---- */
     'ui.table': 'Tabel',
@@ -117,8 +113,7 @@
     'ui.signal': 'Yang terbaca dari laporan',
     'ui.decision': 'Keputusan yang didukung',
     'ui.enabler': 'Bagaimana ini dimungkinkan',
-    'ui.disclosure':
-      'Angka direkonstruksi untuk publikasi. Struktur perhitungan, hubungan antar pos, dan pertanyaan manajemennya mengikuti pekerjaan aslinya.',
+    'ui.anonymised': 'Data disamarkan',
     'ui.of': 'dari',
     'ui.period': 'Periode 14 hari',
     'ui.perPcs': 'per pcs',
@@ -154,7 +149,7 @@
     'vision.gap2': 'Manual validation makes the report arrive after the decision moment has passed',
     'vision.gap3': 'Reports explain the past but never point to what has to be decided',
 
-    'compress.eyebrow': 'Signature Experience — Decision Compression',
+    'compress.eyebrow': 'How information becomes a decision',
     'compress.payoff': 'Less time gathering information. More time deciding what matters.',
     'compress.s1.t': 'Information arrives from every direction.',
     'compress.s1.b':
@@ -189,7 +184,7 @@
     'work.eyebrow': 'Selected Work — Real Outputs',
     'work.title': 'Three management questions, three ways to answer them.',
     'work.note':
-      'Each case study is rebuilt from the logic of reporting work I actually did: the calculation structure, the relationships between the numbers, and the question that had to be answered. The values themselves are anonymised for publication.',
+      'Each case study follows the logic of reporting work I have done: its calculation structure, the relationships between the numbers, and the question that had to be answered.',
 
     'method.eyebrow': 'How I Work',
     'method.title': 'From a management question to a decision-ready report.',
@@ -205,8 +200,6 @@
     'about.lede3': 'Technology-enabled.',
     'about.factBase': 'Based in',
     'about.factLang': 'Working languages',
-    'about.factFor': 'Works with',
-    'about.factForV': 'Owners, boards, CFOs and finance leaders',
     'about.themes': 'Scope',
     'about.linkedin': 'The full career history lives on',
     'about.p1':
@@ -222,8 +215,6 @@
       'Tell me the financial question that is currently unresolved in your business — margin, cash, receivables or project performance. You will get a point of view back, not a pitch.',
     'contact.wa': 'Direct conversation',
     'contact.loc': 'Location',
-    'foot.note':
-      'Every figure on this site is a public-safe reconstruction that preserves the original financial logic. None of it is company data.',
 
     'ui.table': 'Table',
     'ui.chart': 'Chart',
@@ -234,8 +225,7 @@
     'ui.signal': 'What the report shows',
     'ui.decision': 'Decisions it supports',
     'ui.enabler': 'How it was enabled',
-    'ui.disclosure':
-      'Figures are reconstructed for publication. The calculation structure, the relationships between lines and the management question follow the original work.',
+    'ui.anonymised': 'Anonymised',
     'ui.of': 'of',
     'ui.period': '14-day period',
     'ui.perPcs': 'per unit',
