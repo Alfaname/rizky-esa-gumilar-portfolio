@@ -1599,6 +1599,7 @@ ol {
 /* ---------- About ---------- */
 .about {
   border-top: 1px solid var(--line);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 .about__grid {
   display: grid;
@@ -1678,9 +1679,12 @@ ol {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: clamp(1.5rem, 3vw, 3rem);
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  padding-top: 1.6rem;
-  border-top: 1px solid var(--line-warm);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--line-warm);
+}
+.close__label {
+  margin-bottom: 1.1rem;
+  color: var(--brass-deep);
 }
 .principle__k {
   font-family: var(--font-mono);
@@ -1710,6 +1714,7 @@ ol {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: start;
+  margin-top: clamp(2.2rem, 4.5vw, 3.5rem);
 }
 .contact__title {
   font-size: clamp(2rem, 1.3rem + 2.8vw, 3.5rem);

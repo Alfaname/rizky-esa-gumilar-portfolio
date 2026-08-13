@@ -81,7 +81,8 @@
     'method.openingK': '01 · Pertanyaan manajemen',
 
     'support.eyebrow': 'Pekerjaan Pendukung',
-    'about.eyebrow': 'Tentang & Cara Berpikir',
+    'about.eyebrow': 'Tentang',
+    'close.label': 'Tiga hal yang saya pegang',
     'about.lede1': 'Finance-minded.',
     'about.lede2': 'Strategy-driven.',
     'about.lede3': 'Technology-enabled.',
@@ -194,7 +195,8 @@
     'method.openingK': '01 · The management question',
 
     'support.eyebrow': 'Supporting Work',
-    'about.eyebrow': 'About & How I Think',
+    'about.eyebrow': 'About',
+    'close.label': 'Three things I hold to',
     'about.lede1': 'Finance-minded.',
     'about.lede2': 'Strategy-driven.',
     'about.lede3': 'Technology-enabled.',
